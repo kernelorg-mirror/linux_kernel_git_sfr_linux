@@ -30,6 +30,7 @@
 #include <linux/irq.h>
 #include <linux/suspend.h>
 #include <linux/mm.h>
+#include <linux/major.h>
 
 #include <asm/div64.h>
 #include <asm/io.h>

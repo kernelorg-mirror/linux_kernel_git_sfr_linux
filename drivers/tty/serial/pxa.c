@@ -35,6 +35,7 @@
 #include <linux/clk.h>
 #include <linux/io.h>
 #include <linux/slab.h>
+#include <linux/major.h>
 
 #define PXA_NAME_LEN		8
 

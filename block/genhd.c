@@ -23,6 +23,7 @@
 #include <linux/log2.h>
 #include <linux/pm_runtime.h>
 #include <linux/badblocks.h>
+#include <linux/major.h>
 
 #include "blk.h"
 

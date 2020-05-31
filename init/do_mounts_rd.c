@@ -8,6 +8,7 @@
 #include <linux/initrd.h>
 #include <linux/string.h>
 #include <linux/slab.h>
+#include <linux/major.h>
 
 #include "do_mounts.h"
 #include "../fs/squashfs/squashfs_fs.h"

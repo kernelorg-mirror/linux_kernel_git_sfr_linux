@@ -16,6 +16,7 @@
 #include <linux/tty.h>
 #include <linux/module.h>
 #include <linux/spinlock.h>
+#include <linux/major.h>
 
 struct ttyprintk_port {
 	struct tty_port port;

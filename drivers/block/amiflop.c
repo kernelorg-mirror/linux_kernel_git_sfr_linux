@@ -67,6 +67,7 @@
 #include <linux/elevator.h>
 #include <linux/interrupt.h>
 #include <linux/platform_device.h>
+#include <linux/major.h>
 
 #include <asm/setup.h>
 #include <linux/uaccess.h>

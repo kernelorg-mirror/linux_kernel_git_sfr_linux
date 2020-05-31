@@ -37,6 +37,7 @@
 #ifdef CONFIG_SPARC
 #include <linux/sunserialcore.h>
 #endif
+#include <linux/major.h>
 
 #include <asm/irq.h>
 

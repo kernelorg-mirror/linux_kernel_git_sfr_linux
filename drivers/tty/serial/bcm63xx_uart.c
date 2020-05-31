@@ -25,6 +25,7 @@
 #include <linux/serial_bcm63xx.h>
 #include <linux/io.h>
 #include <linux/of.h>
+#include <linux/major.h>
 
 #define BCM63XX_NR_UARTS	2
 

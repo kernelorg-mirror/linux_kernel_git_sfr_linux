@@ -24,6 +24,7 @@
 #include <linux/smp.h>
 #include <linux/fs.h>
 #include <linux/io.h>
+#include <linux/major.h>
 
 #include "vmci_handle_array.h"
 #include "vmci_queue_pair.h"

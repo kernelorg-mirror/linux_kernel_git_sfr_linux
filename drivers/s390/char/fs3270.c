@@ -18,6 +18,7 @@
 #include <linux/list.h>
 #include <linux/slab.h>
 #include <linux/types.h>
+#include <linux/major.h>
 
 #include <asm/ccwdev.h>
 #include <asm/cio.h>

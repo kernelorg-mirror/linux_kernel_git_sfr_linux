@@ -17,6 +17,7 @@
 #include <linux/console.h>
 #include <linux/interrupt.h>
 #include <linux/workqueue.h>
+#include <linux/major.h>
 
 #include <linux/slab.h>
 #include <linux/memblock.h>

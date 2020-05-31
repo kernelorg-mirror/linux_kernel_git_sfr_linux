@@ -3,6 +3,7 @@
 #include <linux/miscdevice.h>	/* for misc_register, and MISC_DYNAMIC_MINOR */
 #include <linux/types.h>
 #include <linux/uaccess.h>
+#include <linux/major.h>
 
 #include "speakup.h"
 #include "spk_priv.h"

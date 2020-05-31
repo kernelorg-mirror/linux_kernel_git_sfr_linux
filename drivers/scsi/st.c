@@ -42,6 +42,7 @@ static const char *verstr = "20160209";
 #include <linux/idr.h>
 #include <linux/delay.h>
 #include <linux/mutex.h>
+#include <linux/major.h>
 
 #include <linux/uaccess.h>
 #include <asm/dma.h>

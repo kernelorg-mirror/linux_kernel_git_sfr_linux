@@ -35,6 +35,7 @@
 #include <linux/vmalloc.h>
 #include <linux/platform_device.h>
 #include <linux/scatterlist.h>
+#include <linux/major.h>
 #include <asm/tlbflush.h>
 #include <kern_util.h>
 #include "mconsole_kern.h"

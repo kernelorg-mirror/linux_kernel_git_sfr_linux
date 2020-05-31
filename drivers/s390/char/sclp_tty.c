@@ -17,6 +17,7 @@
 #include <linux/interrupt.h>
 #include <linux/gfp.h>
 #include <linux/uaccess.h>
+#include <linux/major.h>
 
 #include "ctrlchar.h"
 #include "sclp.h"

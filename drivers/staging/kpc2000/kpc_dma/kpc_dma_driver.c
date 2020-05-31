@@ -8,6 +8,7 @@
 #include <linux/platform_device.h>
 #include <linux/fs.h>
 #include <linux/rwsem.h>
+#include <linux/major.h>
 #include "kpc_dma_driver.h"
 
 MODULE_LICENSE("GPL");

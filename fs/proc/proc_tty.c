@@ -15,6 +15,7 @@
 #include <linux/tty.h>
 #include <linux/seq_file.h>
 #include <linux/bitops.h>
+#include <linux/major.h>
 #include "internal.h"
 
 /*

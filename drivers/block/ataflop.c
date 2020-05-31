@@ -71,6 +71,7 @@
 #include <linux/mutex.h>
 #include <linux/completion.h>
 #include <linux/wait.h>
+#include <linux/major.h>
 
 #include <asm/atariints.h>
 #include <asm/atari_stdma.h>

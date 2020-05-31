@@ -21,6 +21,7 @@
 #include <linux/kernel.h>
 #include <linux/delay.h>
 #include <linux/platform_device.h>
+#include <linux/major.h>
 
 #include <asm/mac_via.h>
 

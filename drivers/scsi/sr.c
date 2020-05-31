@@ -50,6 +50,7 @@
 #include <linux/slab.h>
 #include <linux/pm_runtime.h>
 #include <linux/uaccess.h>
+#include <linux/major.h>
 
 #include <asm/unaligned.h>
 

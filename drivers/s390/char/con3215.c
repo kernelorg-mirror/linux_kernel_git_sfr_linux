@@ -22,6 +22,7 @@
 #include <linux/reboot.h>
 #include <linux/serial.h> /* ASYNC_* flags */
 #include <linux/slab.h>
+#include <linux/major.h>
 #include <asm/ccwdev.h>
 #include <asm/cio.h>
 #include <asm/io.h>

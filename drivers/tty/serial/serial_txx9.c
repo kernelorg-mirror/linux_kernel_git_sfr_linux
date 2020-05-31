@@ -23,6 +23,7 @@
 #include <linux/serial.h>
 #include <linux/tty.h>
 #include <linux/tty_flip.h>
+#include <linux/major.h>
 
 #include <asm/io.h>
 

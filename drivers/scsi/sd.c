@@ -57,6 +57,7 @@
 #include <linux/pr.h>
 #include <linux/t10-pi.h>
 #include <linux/uaccess.h>
+#include <linux/major.h>
 #include <asm/unaligned.h>
 
 #include <scsi/scsi.h>

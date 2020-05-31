@@ -41,6 +41,7 @@
 #include <linux/unistd.h>
 #include <linux/vmalloc.h>
 #include <linux/sched/signal.h>
+#include <linux/major.h>
 
 #include <linux/drbd_limits.h>
 #include "drbd_int.h"

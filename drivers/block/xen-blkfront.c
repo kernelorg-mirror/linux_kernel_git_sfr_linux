@@ -48,6 +48,7 @@
 #include <linux/list.h>
 #include <linux/workqueue.h>
 #include <linux/sched/mm.h>
+#include <linux/major.h>
 
 #include <xen/xen.h>
 #include <xen/xenbus.h>

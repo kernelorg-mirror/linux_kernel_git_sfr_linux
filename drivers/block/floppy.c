@@ -193,6 +193,7 @@ static int print_unex = 1;
 #include <linux/uaccess.h>
 #include <linux/async.h>
 #include <linux/compat.h>
+#include <linux/major.h>
 
 /*
  * PS/2 floppies have much slower step rates than regular floppies.

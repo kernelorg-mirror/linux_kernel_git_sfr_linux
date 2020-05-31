@@ -19,6 +19,7 @@
 #include <linux/slab.h>
 #include <linux/ramfs.h>
 #include <linux/shmem_fs.h>
+#include <linux/major.h>
 
 #include <linux/nfs_fs.h>
 #include <linux/nfs_fs_sb.h>

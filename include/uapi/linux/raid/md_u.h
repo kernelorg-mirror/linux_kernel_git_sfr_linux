@@ -16,6 +16,8 @@
 #ifndef _UAPI_MD_U_H
 #define _UAPI_MD_U_H
 
+#include <linux/major.h>
+
 /*
  * Different major versions are not compatible.
  * Different minor versions are only downward compatible.

@@ -63,6 +63,7 @@
 #include <linux/types.h>
 #include <linux/list.h>
 #include <linux/highmem.h>
+#include <linux/major.h>
 
 #include <xen/xen.h>
 #include <xen/page.h>

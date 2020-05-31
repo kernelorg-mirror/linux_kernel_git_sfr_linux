@@ -62,6 +62,7 @@
 #include <linux/slab.h>
 #include <linux/percpu-refcount.h>
 #include <linux/part_stat.h>
+#include <linux/major.h>
 
 #include <trace/events/block.h>
 #include "md.h"

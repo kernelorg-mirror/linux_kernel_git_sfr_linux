@@ -28,6 +28,7 @@
 #include <linux/platform_device.h>
 #include <linux/io.h>
 #include <linux/serial_core.h>
+#include <linux/major.h>
 #include <asm/irq.h>
 
 #include "apbuart.h"

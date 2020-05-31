@@ -56,6 +56,7 @@
 #include <linux/miscdevice.h>
 #include <linux/mutex.h>
 #include <linux/compat.h>
+#include <linux/major.h>
 
 #include <asm/io.h>
 #include <linux/uaccess.h>

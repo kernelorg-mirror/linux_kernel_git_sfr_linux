@@ -42,6 +42,7 @@
 #include <linux/types.h>	/* For standard types (like size_t) */
 #include <linux/watchdog.h>	/* For watchdog specific items */
 #include <linux/uaccess.h>	/* For copy_to_user/put_user/... */
+#include <linux/major.h>
 
 #include <uapi/linux/sched/types.h>	/* For struct sched_param */
 

@@ -34,6 +34,7 @@
 #include <linux/pseudo_fs.h>
 #include <uapi/linux/magic.h>
 #include <linux/mount.h>
+#include <linux/major.h>
 
 #ifdef CONFIG_IA64
 # include <linux/efi.h>

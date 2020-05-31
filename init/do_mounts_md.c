@@ -2,6 +2,7 @@
 #include <linux/delay.h>
 #include <linux/raid/md_u.h>
 #include <linux/raid/md_p.h>
+#include <linux/major.h>
 
 #include "do_mounts.h"
 
