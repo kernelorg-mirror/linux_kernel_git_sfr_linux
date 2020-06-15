@@ -21,7 +21,6 @@
 #include <linux/timer.h>
 #include <linux/mm.h>
 #include <linux/interrupt.h>
-#include <linux/major.h>
 #include <linux/errno.h>
 #include <linux/genhd.h>
 #include <linux/slab.h>
