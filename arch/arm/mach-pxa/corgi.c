@@ -12,7 +12,6 @@
 #include <linux/module.h>	/* symbol_get ; symbol_put */
 #include <linux/init.h>
 #include <linux/platform_device.h>
-#include <linux/major.h>
 #include <linux/fs.h>
 #include <linux/interrupt.h>
 #include <linux/leds.h>

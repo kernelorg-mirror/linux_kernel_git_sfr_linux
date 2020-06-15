@@ -18,7 +18,6 @@
 #include <linux/io.h>
 #include <linux/platform_device.h>
 #include <linux/syscore_ops.h>
-#include <linux/major.h>
 #include <linux/fb.h>
 #include <linux/interrupt.h>
 #include <linux/mtd/mtd.h>
