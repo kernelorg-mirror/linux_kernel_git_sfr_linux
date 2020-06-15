@@ -23,7 +23,6 @@
 #include <linux/console.h>
 #include <linux/linkage.h>
 #include <linux/init.h>
-#include <linux/major.h>
 #include <linux/genhd.h>
 #include <linux/rtc.h>
 #include <linux/interrupt.h>
