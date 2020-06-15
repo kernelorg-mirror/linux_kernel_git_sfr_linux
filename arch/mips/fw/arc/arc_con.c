@@ -8,7 +8,6 @@
  * Copyright (c) 2002 Thiemo Seufer
  */
 #include <linux/tty.h>
-#include <linux/major.h>
 #include <linux/init.h>
 #include <linux/console.h>
 #include <linux/fs.h>
