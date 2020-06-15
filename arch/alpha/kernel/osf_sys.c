@@ -27,7 +27,6 @@
 #include <linux/utsname.h>
 #include <linux/time.h>
 #include <linux/timex.h>
-#include <linux/major.h>
 #include <linux/stat.h>
 #include <linux/mman.h>
 #include <linux/shm.h>

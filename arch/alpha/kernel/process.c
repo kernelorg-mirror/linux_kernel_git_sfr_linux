@@ -23,7 +23,6 @@
 #include <linux/ptrace.h>
 #include <linux/user.h>
 #include <linux/time.h>
-#include <linux/major.h>
 #include <linux/stat.h>
 #include <linux/vt.h>
 #include <linux/mman.h>
