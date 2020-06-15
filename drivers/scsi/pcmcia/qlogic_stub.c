@@ -39,7 +39,6 @@
 #include <linux/ioport.h>
 #include <asm/io.h>
 #include <scsi/scsi.h>
-#include <linux/major.h>
 #include <linux/blkdev.h>
 #include <scsi/scsi_ioctl.h>
 #include <linux/interrupt.h>
