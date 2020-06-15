@@ -13,7 +13,6 @@
 #include <linux/moduleparam.h>
 #include <linux/kernel.h>
 #include <linux/string.h>
-#include <linux/major.h>
 #include <linux/errno.h>
 #include <linux/timer.h>
 #include <linux/slab.h>

@@ -6,7 +6,6 @@
 #include <linux/unistd.h>
 #include <linux/slab.h>
 #include <linux/mount.h>
-#include <linux/major.h>
 #include <linux/root_dev.h>
 
 void  change_floppy(char *fmt, ...);

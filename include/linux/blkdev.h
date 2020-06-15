@@ -7,7 +7,6 @@
 
 #ifdef CONFIG_BLOCK
 
-#include <linux/major.h>
 #include <linux/genhd.h>
 #include <linux/list.h>
 #include <linux/llist.h>

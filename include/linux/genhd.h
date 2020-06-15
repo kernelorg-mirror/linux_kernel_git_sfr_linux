@@ -32,7 +32,6 @@ extern struct class block_class;
 #define DISK_MAX_PARTS			256
 #define DISK_NAME_LEN			32
 
-#include <linux/major.h>
 #include <linux/device.h>
 #include <linux/smp.h>
 #include <linux/string.h>

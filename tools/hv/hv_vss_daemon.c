@@ -21,7 +21,6 @@
 #include <ctype.h>
 #include <errno.h>
 #include <linux/fs.h>
-#include <linux/major.h>
 #include <linux/hyperv.h>
 #include <syslog.h>
 #include <getopt.h>

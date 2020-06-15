@@ -10,7 +10,6 @@
 
 #include <linux/init.h>
 #include <linux/magic.h>
-#include <linux/major.h>
 #include <linux/mount.h>
 #include <linux/namei.h>
 #include <linux/fs.h>

@@ -14,7 +14,6 @@
 #include <linux/init.h>
 #include <linux/kernel.h>
 #include <linux/string.h>
-#include <linux/major.h>
 #include <linux/errno.h>
 #include <linux/slab.h>
 #include <linux/mm.h>

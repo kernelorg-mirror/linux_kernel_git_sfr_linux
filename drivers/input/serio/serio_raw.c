@@ -12,7 +12,6 @@
 #include <linux/poll.h>
 #include <linux/module.h>
 #include <linux/serio.h>
-#include <linux/major.h>
 #include <linux/device.h>
 #include <linux/miscdevice.h>
 #include <linux/wait.h>

@@ -13,7 +13,6 @@
 #include <linux/list.h>
 #include <linux/namei.h>
 #include <linux/magic.h>
-#include <linux/major.h>
 #include <linux/miscdevice.h>
 #include <linux/module.h>
 #include <linux/mutex.h>
