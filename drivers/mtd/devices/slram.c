@@ -38,7 +38,6 @@
 #include <linux/slab.h>
 #include <linux/string.h>
 #include <linux/timer.h>
-#include <linux/major.h>
 #include <linux/fs.h>
 #include <linux/ioctl.h>
 #include <linux/init.h>

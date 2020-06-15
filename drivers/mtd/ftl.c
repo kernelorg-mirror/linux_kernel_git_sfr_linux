@@ -64,7 +64,6 @@
 #include <linux/slab.h>
 #include <linux/string.h>
 #include <linux/timer.h>
-#include <linux/major.h>
 #include <linux/fs.h>
 #include <linux/init.h>
 #include <linux/hdreg.h>
