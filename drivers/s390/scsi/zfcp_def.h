@@ -14,7 +14,6 @@
 
 #include <linux/init.h>
 #include <linux/moduleparam.h>
-#include <linux/major.h>
 #include <linux/blkdev.h>
 #include <linux/delay.h>
 #include <linux/timer.h>

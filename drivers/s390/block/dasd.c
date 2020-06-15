@@ -15,7 +15,6 @@
 #include <linux/init.h>
 #include <linux/interrupt.h>
 #include <linux/ctype.h>
-#include <linux/major.h>
 #include <linux/slab.h>
 #include <linux/hdreg.h>
 #include <linux/async.h>

@@ -24,7 +24,6 @@
 
 #include "raw3270.h"
 
-#include <linux/major.h>
 #include <linux/kdev_t.h>
 #include <linux/device.h>
 #include <linux/mutex.h>
