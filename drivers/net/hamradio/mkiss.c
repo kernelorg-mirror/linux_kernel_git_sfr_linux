@@ -18,7 +18,6 @@
 #include <linux/tty.h>
 #include <linux/errno.h>
 #include <linux/netdevice.h>
-#include <linux/major.h>
 #include <linux/init.h>
 #include <linux/rtnetlink.h>
 #include <linux/etherdevice.h>

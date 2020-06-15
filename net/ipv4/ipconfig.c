@@ -53,7 +53,6 @@
 #include <linux/udp.h>
 #include <linux/proc_fs.h>
 #include <linux/seq_file.h>
-#include <linux/major.h>
 #include <linux/root_dev.h>
 #include <linux/delay.h>
 #include <linux/nfs_fs.h>
