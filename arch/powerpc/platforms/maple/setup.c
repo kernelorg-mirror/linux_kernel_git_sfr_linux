@@ -22,7 +22,6 @@
 #include <linux/string.h>
 #include <linux/delay.h>
 #include <linux/ioport.h>
-#include <linux/major.h>
 #include <linux/initrd.h>
 #include <linux/vt_kern.h>
 #include <linux/console.h>

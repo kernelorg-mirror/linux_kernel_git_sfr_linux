@@ -18,7 +18,6 @@
 #include <linux/ptrace.h>
 #include <linux/user.h>
 #include <linux/tty.h>
-#include <linux/major.h>
 #include <linux/interrupt.h>
 #include <linux/reboot.h>
 #include <linux/init.h>
