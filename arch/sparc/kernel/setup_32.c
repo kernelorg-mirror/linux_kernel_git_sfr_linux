@@ -23,7 +23,6 @@
 #include <linux/seq_file.h>
 #include <linux/syscalls.h>
 #include <linux/kdev_t.h>
-#include <linux/major.h>
 #include <linux/string.h>
 #include <linux/init.h>
 #include <linux/interrupt.h>
