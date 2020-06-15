@@ -30,7 +30,6 @@
 #include <linux/interrupt.h>
 #include <linux/ioport.h>
 #include <linux/ktime.h>
-#include <linux/major.h>
 #include <linux/module.h>
 #include <linux/mm.h>
 #include <linux/of.h>

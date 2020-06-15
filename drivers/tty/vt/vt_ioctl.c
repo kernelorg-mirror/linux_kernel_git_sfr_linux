@@ -21,7 +21,6 @@
 #include <linux/vt.h>
 #include <linux/string.h>
 #include <linux/slab.h>
-#include <linux/major.h>
 #include <linux/fs.h>
 #include <linux/console.h>
 #include <linux/consolemap.h>

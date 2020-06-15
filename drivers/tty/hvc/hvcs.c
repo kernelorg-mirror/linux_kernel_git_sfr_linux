@@ -57,7 +57,6 @@
 #include <linux/kref.h>
 #include <linux/kthread.h>
 #include <linux/list.h>
-#include <linux/major.h>
 #include <linux/module.h>
 #include <linux/moduleparam.h>
 #include <linux/sched.h>

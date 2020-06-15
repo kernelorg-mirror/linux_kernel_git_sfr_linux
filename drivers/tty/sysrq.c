@@ -24,7 +24,6 @@
 #include <linux/fs.h>
 #include <linux/mount.h>
 #include <linux/kdev_t.h>
-#include <linux/major.h>
 #include <linux/reboot.h>
 #include <linux/sysrq.h>
 #include <linux/kbd_kern.h>

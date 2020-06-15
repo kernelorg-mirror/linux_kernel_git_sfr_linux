@@ -24,7 +24,6 @@
 #include <linux/init.h>
 #include <linux/interrupt.h>
 #include <linux/module.h>
-#include <linux/major.h>
 #include <linux/kernel.h>
 #include <linux/spinlock.h>
 #include <linux/sysrq.h>

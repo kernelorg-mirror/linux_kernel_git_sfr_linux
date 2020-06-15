@@ -29,7 +29,6 @@
  */
 
 #include <linux/types.h>
-#include <linux/major.h>
 #include <linux/errno.h>
 #include <linux/signal.h>
 #include <linux/fcntl.h>

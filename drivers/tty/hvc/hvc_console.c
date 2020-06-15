@@ -16,7 +16,6 @@
 #include <linux/kernel.h>
 #include <linux/kthread.h>
 #include <linux/list.h>
-#include <linux/major.h>
 #include <linux/atomic.h>
 #include <linux/sysrq.h>
 #include <linux/tty.h>

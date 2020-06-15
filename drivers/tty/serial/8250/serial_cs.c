@@ -41,7 +41,6 @@
 #include <linux/timer.h>
 #include <linux/serial_core.h>
 #include <linux/delay.h>
-#include <linux/major.h>
 #include <asm/io.h>
 
 #include <pcmcia/cistpl.h>
