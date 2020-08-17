@@ -1,6 +1,5 @@
 # SPDX-License-Identifier: GPL-2.0
 syscall := $(srctree)/$(src)/syscall.tbl
-systbl := $(srctree)/$(src)/syscalltbl.sh
 
 syscalln32 := $(srctree)/$(src)/syscall_n32.tbl
 syscalln64 := $(srctree)/$(src)/syscall_n64.tbl
@@ -53,22 +52,19 @@ sysnr_offset_unistd_nr_o32 := 4000
 $(uapi)/unistd_nr_o32.h: $(syscallo32) $(sysnr)
 	$(call if_changed,sysnr)
 
-systbl_abi_syscall_table_32_o32 := 32_o32
 systbl_offset_syscall_table_32_o32 := 4000
 $(kapi)/syscall_table_32_o32.h: $(syscallo32) $(systbl)
 	$(call if_changed,systbl)
 
-systbl_abi_syscall_table_64_n32 := 64_n32
 systbl_offset_syscall_table_64_n32 := 6000
 $(kapi)/syscall_table_64_n32.h: $(syscalln32) $(systbl)
 	$(call if_changed,systbl)
 
-systbl_abi_syscall_table_64_n64 := 64_n64
 systbl_offset_syscall_table_64_n64 := 5000
 $(kapi)/syscall_table_64_n64.h: $(syscalln64) $(systbl)
 	$(call if_changed,systbl)
 
-systbl_abi_syscall_table_64_o32 := 64_o32
 systbl_offset_syscall_table_64_o32 := 4000
+systbl_compat_syscall_table_64_o32 := true
 $(kapi)/syscall_table_64_o32.h: $(syscallo32) $(systbl)
 	$(call if_changed,systbl)

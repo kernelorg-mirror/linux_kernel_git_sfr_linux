@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: GPL-2.0
 syscall := $(srctree)/$(src)/syscall.tbl
-systbl := $(srctree)/$(src)/syscalltbl.sh
+
+systbl_num_syscall_args := 3
 
 syshdr_offset_unistd_64 := __NR_Linux
 systbl_offset_syscall_table := 1024

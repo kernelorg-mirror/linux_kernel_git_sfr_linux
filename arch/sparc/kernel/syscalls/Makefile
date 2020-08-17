@@ -1,13 +1,15 @@
 # SPDX-License-Identifier: GPL-2.0
 syscall := $(srctree)/$(src)/syscall.tbl
-systbl := $(srctree)/$(src)/syscalltbl.sh
+
+systbl_num_syscall_args := 3
+systbl_ni_syscall := sys_nis_syscall
 
 syshdr_abis_unistd_32 := common,32
 syshdr_abis_unistd_64 := common,64
 systbl_abis_syscall_table_32 := common,32
 systbl_abis_syscall_table_64 := common,64
 systbl_abis_syscall_table_c32 := common,32
-systbl_abi_syscall_table_c32 := c32
+systbl_compat_syscall_table_c32 := true
 
 uapisyshdr-y		+= unistd_32.h unistd_64.h
 kapisyshdr-y		+= syscall_table_32.h		\
