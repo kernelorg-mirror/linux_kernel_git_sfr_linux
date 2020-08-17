@@ -6,10 +6,11 @@ out="$2"
 my_abis=`echo "($3)" | tr ',' '|'`
 prefix="$4"
 offset="$5"
+fg_arch="$6"
 
-fileguard=_UAPI_ASM_POWERPC_`basename "$out" | sed \
-	-e 'y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/' \
-	-e 's/[^A-Z0-9_]/_/g' -e 's/__/_/g'`
+fileguard=$(printf '_UAPI_ASM_%s_%s' "$fg_arch" "$(basename "$out")" |
+	sed -e 'y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/' \
+		-e 's/[^A-Z0-9_]/_/g' -e 's/__/_/g')
 grep -E "^[0-9A-Fa-fXx]+[[:space:]]+${my_abis}" "$in" | sort -n | (
 	printf "#ifndef %s\n" "${fileguard}"
 	printf "#define %s\n" "${fileguard}"
