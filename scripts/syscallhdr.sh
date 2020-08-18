@@ -8,12 +8,19 @@ prefix="$4"
 offset="$5"
 fg_arch="$6"
 
+fg_val=''
+sep='	'		# a TAB
+if [ "$fg_arch" = 'arm' ]; then
+	fg_val=' 1'
+	sep=' '		# a SPACE
+fi
+
 fileguard=$(printf '_UAPI_ASM_%s_%s' "$fg_arch" "$(basename "$out")" |
 	tr '[:lower:]' '[:upper:]' | tr -c -s '[:alnum:]_' '[_*]')
 
 grep -E "^[[:xdigit:]Xx]+[[:space:]]+$my_abis" "$in" | sort -n | {
 	printf '#ifndef %s\n' "$fileguard"
-	printf '#define %s\n\n' "$fileguard"
+	printf '#define %s%s\n\n' "$fileguard" "$fg_val"
 
 	nxt=0
 	while read -r nr _ name _ _ ; do
@@ -22,12 +29,15 @@ grep -E "^[[:xdigit:]Xx]+[[:space:]]+$my_abis" "$in" | sort -n | {
 		else
 			value="$nr"
 		fi
-		printf '#define __NR_%s%s\t%s\n' "$prefix" "$name" "$value"
+		printf '#define __NR_%s%s%s%s\n' \
+			"$prefix" "$name" "$sep" "$value"
 		nxt=$(( nr + 1 ))
 	done
 
-	printf '\n#ifdef __KERNEL__\n'
-	printf '#define __NR_syscalls\t%s\n' "$nxt"
-	printf '#endif\n\n'
-	printf '#endif /* %s */\n' "$fileguard"
+	if [ "$fg_arch" != 'arm' ]; then
+		printf '\n#ifdef __KERNEL__\n'
+		printf '#define __NR_syscalls%s%s\n' "$sep" "$nxt"
+		printf '#endif\n'
+	fi
+	printf '\n#endif /* %s */\n' "$fileguard"
 } > "$out"

@@ -8,7 +8,7 @@
 gen := arch/$(ARCH)/include/generated
 kapi := $(gen)/asm
 uapi := $(gen)/uapi/asm
-syshdr := $(srctree)/$(src)/syscallhdr.sh
+syshdr := $(srctree)/scripts/syscallhdr.sh
 sysnr := $(srctree)/$(src)/syscallnr.sh
 systbl := $(srctree)/$(src)/syscalltbl.sh
 syscall := $(srctree)/$(src)/syscall.tbl
@@ -44,7 +44,8 @@ quiet_cmd_syshdr = SYSHDR  $@
       cmd_syshdr = $(CONFIG_SHELL) '$(syshdr)' '$<' '$@' \
 		   '$(syshdr_abi_$(basetarget))' \
 		   '$(syshdr_pfx_$(basetarget))' \
-		   '__NR_SYSCALL_BASE'
+		   '__NR_SYSCALL_BASE' \
+		   '$(SRCARCH)'
 
 quiet_cmd_systbl = SYSTBL  $@
       cmd_systbl = $(CONFIG_SHELL) '$(systbl)' '$<' '$@' \
