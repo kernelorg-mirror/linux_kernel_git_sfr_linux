@@ -3,35 +3,31 @@
 
 in="$1"
 out="$2"
-my_abis=`echo "($3)" | tr ',' '|'`
+my_abis=$(echo "($3)" | tr ',' '|')
 prefix="$4"
 offset="$5"
 fg_arch="$6"
 
 fileguard=$(printf '_UAPI_ASM_%s_%s' "$fg_arch" "$(basename "$out")" |
-	sed -e 'y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/' \
-		-e 's/[^A-Z0-9_]/_/g' -e 's/__/_/g')
-grep -E "^[0-9A-Fa-fXx]+[[:space:]]+${my_abis}" "$in" | sort -n | (
-	printf "#ifndef %s\n" "${fileguard}"
-	printf "#define %s\n" "${fileguard}"
-	printf "\n"
+	tr '[:lower:]' '[:upper:]' | tr -c -s '[:alnum:]_' '[_*]')
+
+grep -E "^[[:xdigit:]Xx]+[[:space:]]+$my_abis" "$in" | sort -n | {
+	printf '#ifndef %s\n' "$fileguard"
+	printf '#define %s\n\n' "$fileguard"
 
 	nxt=0
-	while read nr abi name entry compat ; do
-		if [ -z "$offset" ]; then
-			printf "#define __NR_%s%s\t%s\n" \
-				"${prefix}" "${name}" "${nr}"
+	while read -r nr _ name _ _ ; do
+		if [ -n "$offset" ]; then
+			value="($offset + $nr)"
 		else
-			printf "#define __NR_%s%s\t(%s + %s)\n" \
-				"${prefix}" "${name}" "${offset}" "${nr}"
+			value="$nr"
 		fi
-		nxt=$((nr+1))
+		printf '#define __NR_%s%s\t%s\n' "$prefix" "$name" "$value"
+		nxt=$(( nr + 1 ))
 	done
 
-	printf "\n"
-	printf "#ifdef __KERNEL__\n"
-	printf "#define __NR_syscalls\t%s\n" "${nxt}"
-	printf "#endif\n"
-	printf "\n"
-	printf "#endif /* %s */\n" "${fileguard}"
-) > "$out"
+	printf '\n#ifdef __KERNEL__\n'
+	printf '#define __NR_syscalls\t%s\n' "$nxt"
+	printf '#endif\n\n'
+	printf '#endif /* %s */\n' "$fileguard"
+} > "$out"
