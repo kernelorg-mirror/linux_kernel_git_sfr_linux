@@ -9,13 +9,17 @@ offset="$5"
 fg_arch="$6"
 
 fg_val=''
+fg_prefix='_UAPI'
 sep='	'		# a TAB
-if [ "$fg_arch" = 'arm' ]; then
+if [ "$fg_arch" = 'arm' ] || [ "$fg_arch" = 'x86' ]; then
 	fg_val=' 1'
 	sep=' '		# a SPACE
 fi
+if [ "$fg_arch" = 'x86' ]; then
+	fg_prefix=''
+fi
 
-fileguard=$(printf '_UAPI_ASM_%s_%s' "$fg_arch" "$(basename "$out")" |
+fileguard=$(printf '%s_ASM_%s_%s' "$fg_prefix" "$fg_arch" "$(basename "$out")" |
 	tr '[:lower:]' '[:upper:]' | tr -c -s '[:alnum:]_' '[_*]')
 
 grep -E "^[[:xdigit:]Xx]+[[:space:]]+$my_abis" "$in" | sort -n | {
@@ -36,7 +40,12 @@ grep -E "^[[:xdigit:]Xx]+[[:space:]]+$my_abis" "$in" | sort -n | {
 
 	if [ "$fg_arch" != 'arm' ]; then
 		printf '\n#ifdef __KERNEL__\n'
-		printf '#define __NR_syscalls%s%s\n' "$sep" "$nxt"
+		if [ "$fg_arch" = 'x86' ]; then
+			printf '#define __NR_%ssyscall_max%s%s\n' \
+				"$prefix" "$sep" "$(( nxt - 1 ))"
+		else
+			printf '#define __NR_syscalls%s%s\n' "$sep" "$nxt"
+		fi
 		printf '#endif\n'
 	fi
 	printf '\n#endif /* %s */\n' "$fileguard"
