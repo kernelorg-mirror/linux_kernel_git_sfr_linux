@@ -8,11 +8,7 @@ prefix="$4"
 offset="$5"
 fg_arch="$6"
 
-fg_val=''
 fg_prefix='_UAPI'
-if [ "$fg_arch" = 'arm' ] || [ "$fg_arch" = 'x86' ]; then
-	fg_val=' 1'
-fi
 if [ "$fg_arch" = 'x86' ]; then
 	fg_prefix=''
 fi
@@ -22,7 +18,7 @@ fileguard=$(printf '%s_ASM_%s_%s' "$fg_prefix" "$fg_arch" "$(basename "$out")" |
 
 grep -E "^[[:xdigit:]Xx]+[[:space:]]+$my_abis" "$in" | sort -n | {
 	printf '#ifndef %s\n' "$fileguard"
-	printf '#define %s%s\n\n' "$fileguard" "$fg_val"
+	printf '#define %s\n\n' "$fileguard"
 
 	nxt=0
 	while read -r nr _ name _ _ ; do
