@@ -10,10 +10,8 @@ fg_arch="$6"
 
 fg_val=''
 fg_prefix='_UAPI'
-sep='	'		# a TAB
 if [ "$fg_arch" = 'arm' ] || [ "$fg_arch" = 'x86' ]; then
 	fg_val=' 1'
-	sep=' '		# a SPACE
 fi
 if [ "$fg_arch" = 'x86' ]; then
 	fg_prefix=''
@@ -33,18 +31,17 @@ grep -E "^[[:xdigit:]Xx]+[[:space:]]+$my_abis" "$in" | sort -n | {
 		else
 			value="$nr"
 		fi
-		printf '#define __NR_%s%s%s%s\n' \
-			"$prefix" "$name" "$sep" "$value"
+		printf '#define __NR_%s%s\t%s\n' "$prefix" "$name" "$value"
 		nxt=$(( nr + 1 ))
 	done
 
 	if [ "$fg_arch" != 'arm' ]; then
 		printf '\n#ifdef __KERNEL__\n'
 		if [ "$fg_arch" = 'x86' ]; then
-			printf '#define __NR_%ssyscall_max%s%s\n' \
-				"$prefix" "$sep" "$(( nxt - 1 ))"
+			printf '#define __NR_%ssyscall_max\t%s\n' \
+				"$prefix" "$(( nxt - 1 ))"
 		else
-			printf '#define __NR_syscalls%s%s\n' "$sep" "$nxt"
+			printf '#define __NR_syscalls\t%s\n' "$nxt"
 		fi
 		printf '#endif\n'
 	fi
