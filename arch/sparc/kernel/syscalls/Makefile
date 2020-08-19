@@ -1,7 +1,6 @@
 # SPDX-License-Identifier: GPL-2.0
 syscall := $(srctree)/$(src)/syscall.tbl
 
-systbl_num_syscall_args := 3
 systbl_ni_syscall := sys_nis_syscall
 
 syshdr_abis_unistd_32 := common,32

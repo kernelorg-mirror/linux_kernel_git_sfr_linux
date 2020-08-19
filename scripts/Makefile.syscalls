@@ -20,7 +20,6 @@ quiet_cmd_systbl = SYSTBL  $@
 		   '$(systbl_abis_$(basetarget))'		\
 		   '$(systbl_offset_$(basetarget))'		\
 		   '$(systbl_compat_$(basetarget))'		\
-		   '$(systbl_num_syscall_args)'			\
 		   '$(systbl_ni_syscall)'
 
 $(uapi)/unistd_32.h: $(syscall) $(syshdr)

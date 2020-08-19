@@ -6,16 +6,10 @@ out="$2"
 my_abis=$(echo "($3)" | tr ',' '|')
 offset="$4"
 is_compat="$5"
-num_syscall_args="$6"
-ni_syscall="$7"
+ni_syscall="$6"
 
 if [ -z "$offset" ]; then
 	offset=0
-fi
-if [ "$num_syscall_args" = "3" ]; then
-	syscall_fmt='__SYSCALL(%s, %s, )\n'
-else
-	syscall_fmt='__SYSCALL(%s,%s)\n'
 fi
 if [ -z "$ni_syscall" ];then
 	ni_syscall='sys_ni_syscall'
@@ -27,12 +21,10 @@ emit() {
 	t_entry="$3"
 
 	while [ "$t_nxt" -lt "$t_nr" ]; do
-		# shellcheck disable=SC2059
-		printf "$syscall_fmt" "$t_nxt" "$ni_syscall"
+		printf '__SYSCALL(%s,%s)\n' "$t_nxt" "$ni_syscall"
 		t_nxt=$(( t_nxt + 1 ))
 	done
-	# shellcheck disable=SC2059
-	printf "$syscall_fmt" "$t_nxt" "$t_entry"
+	printf '__SYSCALL(%s,%s)\n' "$t_nxt" "$t_entry"
 }
 
 grep -E "^[[:xdigit:]Xx]+[[:space:]]+${my_abis}" "$in" | sort -n | {
